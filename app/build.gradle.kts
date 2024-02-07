@@ -26,10 +26,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    //I added this method for lab2
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
