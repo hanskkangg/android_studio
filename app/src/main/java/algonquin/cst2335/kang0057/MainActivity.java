@@ -2,50 +2,54 @@ package algonquin.cst2335.kang0057;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
-import android.widget.Switch;
-
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
 public class MainActivity extends AppCompatActivity {
 
     // Declaring the TAG variable for logging
     private static final String TAG = "MainActivity";
 
-    ImageView imgView;
-    Switch sw;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Using the TAG variable for logging
-        Log.w( "MainActivity", "In onCreate() - Loading Widgets" );
-        sw = findViewById(R.id.languageSwitch);
-        imgView=findViewById(R.id.imageView2);
-        sw.setOnCheckedChangeListener((btn, isChecked) -> {
 
-            if (isChecked) {
-                RotateAnimation rotate = new RotateAnimation(0, 360,
-                        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotate.setDuration(5000);
-                rotate.setRepeatCount(Animation.INFINITE);
-                rotate.setInterpolator(new LinearInterpolator());
+        Log.w(TAG, "In onCreate() - Loading Widgets");
 
-                imgView.startAnimation(rotate);
-            } else {
-                imgView.clearAnimation();
-            }
+        EditText emailEditText = findViewById(R.id.emailEditText);
+        Button loginButton = findViewById(R.id.loginButton);
+
+        // Create a SharedPreferences object
+        SharedPreferences prefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        // Load the saved email address, if exists
+        String emailAddress = prefs.getString("LoginName", "");
+        // Set the loaded email address to the EditText
+        emailEditText.setText(emailAddress);
+
+        loginButton.setOnClickListener(v -> {
+            Log.d(TAG, "Login button clicked");
+            String email = emailEditText.getText().toString();
+
+            // Save the email address using SharedPreferences
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("LoginName", email);
+            editor.apply();
+// MainActivity
+            Intent nextPage = new Intent(MainActivity.this, SecondActivity.class);
+            nextPage.putExtra("EmailAddress", email);
+            startActivity(nextPage);
 
         });
-
-
     }
-
 
     @Override
     protected void onStart() {
@@ -85,3 +89,4 @@ public class MainActivity extends AppCompatActivity {
         Log.w(TAG, "onDestroy(): The activity is about to be destroyed.");
     }
 }
+

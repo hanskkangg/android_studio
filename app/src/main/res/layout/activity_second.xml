@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Welcome Message"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <Button
+        android:id="@+id/callNumberButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="CALL NUMBER"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
+        android:layout_marginStart="16dp"/>
+
+    <Button
+        android:id="@+id/takePictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="CHANGE PICTURE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/callNumberButton"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter phone number"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@id/takePictureButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

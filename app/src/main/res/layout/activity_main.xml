@@ -4,74 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:layout_marginTop="27dp"
-    android:layout_marginBottom="27dp"
-    android:layout_marginLeft="48dp"
-    android:layout_marginRight="48dp">
+    tools:context=".MainActivity">
 
+    <!-- Email address label -->
     <TextView
+        android:id="@+id/emailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_message"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Enter your email address:"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
+    <!-- Email address input field -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Button"
+        android:hint="Type email here"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/emailLabel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:srcCompat="@drawable/flag"
-        tools:layout_editor_absoluteX="32dp" />
-
-    <Switch
-        android:id="@+id/languageSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/spin_message"
-        android:nextFocusLeft="@id/languageSwitch"
-        android:nextFocusRight="@id/languageSwitch"
-        android:nextFocusDown="@id/languageSwitch"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.534" />
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
-    <Button
-        android:id="@+id/button9"
+    <!-- Password label -->
+    <TextView
+        android:id="@+id/passwordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Type your password:"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- Password input field -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Type password here"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/passwordLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Login Button -->
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        android:text="Log In"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
