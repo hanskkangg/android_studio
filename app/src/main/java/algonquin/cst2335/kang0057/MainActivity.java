@@ -10,6 +10,8 @@ import android.widget.Toast;
 /**
  * @author Hans Kang
  * @version 1.0
+ *
+ * I couldn't finish my lab6 I was getting error while generating Javadocs
  */
 public class MainActivity extends AppCompatActivity {
     /**
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:
                 return false;
+
         }
     }
 }
