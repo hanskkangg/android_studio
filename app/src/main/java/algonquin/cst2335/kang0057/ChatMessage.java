@@ -1,8 +1,5 @@
 package algonquin.cst2335.kang0057;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 public class ChatMessage {
     private String message;
     private String timeSent;

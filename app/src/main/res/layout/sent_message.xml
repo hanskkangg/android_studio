@@ -32,5 +32,7 @@
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/send_image" />
+        app:srcCompat="@drawable/send_image"
+
+        android:background="@drawable/send_image"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

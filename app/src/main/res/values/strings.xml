@@ -1,4 +1,7 @@
 <resources>
+    <string name="hello_message" translatable="false">Hello, World!</string>
+    <string name="button_message" translatable="false">Click Me!</string>
+    <string name="hinttext" translatable="false">Enter text here</string>
     <string name="app_name" translatable="false">Hans</string>
     <string name="send" translatable="false">SEND</string>
     <string name="receive" translatable="false">RECEIVE</string>
