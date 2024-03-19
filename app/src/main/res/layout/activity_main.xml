@@ -6,62 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Email address label -->
     <TextView
-        android:id="@+id/emailLabel"
+
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter your email address:"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp" />
-
-    <!-- Email address input field -->
-    <EditText
-        android:id="@+id/emailEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Type email here"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/emailLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="160dp"
+        android:text="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Password label -->
-    <TextView
-        android:id="@+id/passwordLabel"
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type your password:"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <!-- Password input field -->
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Type password here"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/passwordLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.067" />
 
-    <!-- Login Button -->
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="136dp"
+        android:text="@string/Login_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
-
+        app:layout_constraintStart_toStartOf="parent"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
