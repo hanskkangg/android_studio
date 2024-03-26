@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="my_text">#000000</color>
+    <color name="colorPrimary">#FFC107</color>
+
 </resources>
