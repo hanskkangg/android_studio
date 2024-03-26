@@ -185,12 +185,11 @@ public class ChatRoom extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     private void showDeleteConfirmationDialogForMenuItem() {
         AlertDialog.Builder builder = new AlertDialog.Builder(ChatRoom.this)
-                .setTitle("Delete All Messages")
-                .setMessage("Are you sure you want to delete all messages?")
-                .setPositiveButton("Yes", (dialog, which) -> {
+                .setTitle(getString(R.string.delete_all_messages_title))
+                .setMessage(getString(R.string.delete_all_messages_confirmation))
+                .setPositiveButton(getString(R.string.delete_message_positive_button), (dialog, which) -> {
                     messages.clear(); // Clear the local list
                     myAdapter.notifyDataSetChanged(); // Notify the adapter of the data change
 
@@ -199,7 +198,7 @@ public class ChatRoom extends AppCompatActivity {
                         mDAO.deleteAllMessages(); // Delete all messages in the database
                     });
                 })
-                .setNegativeButton("No", null); // No action on "No"
+                .setNegativeButton(getString(R.string.delete_message_negative_button), null); // No action on "No"
 
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -207,26 +206,27 @@ public class ChatRoom extends AppCompatActivity {
 
     private void showDeleteConfirmationDialog(int position) {
         ChatMessage messageToDelete = messages.get(position);
-        String confirmationMessage = "Are you sure you want to delete this message?\n\n" + messageToDelete.getMessage();
+        String confirmationMessage = getString(R.string.delete_message_confirmation, messageToDelete.getMessage());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ChatRoom.this)
-                .setTitle("Delete Message")
+                .setTitle(getString(R.string.delete_message_title))
                 .setMessage(confirmationMessage)
-                .setPositiveButton("Yes", (dialog, which) -> {
+                .setPositiveButton(getString(R.string.delete_message_positive_button), (dialog, which) -> {
                     ChatMessage deletedMessage = messages.remove(position);
                     myAdapter.notifyItemRemoved(position);
                     Executor thread = Executors.newSingleThreadExecutor();
                     thread.execute(() -> mDAO.deleteMessage(deletedMessage));
 
-                    Snackbar snackbar = Snackbar.make(binding.getRoot(), "You deleted message #" + position, Snackbar.LENGTH_LONG);
-                    snackbar.setAction("Undo", v -> {
+                    Snackbar snackbar = Snackbar.make(binding.getRoot(), getString(R.string.message_deleted_snackbar, position), Snackbar.LENGTH_LONG);
+                    snackbar.setAction(getString(R.string.undo), v -> {
                         messages.add(position, deletedMessage);
                         myAdapter.notifyItemInserted(position);
                     });
                     snackbar.show();
                 })
-                .setNegativeButton("No", (dialog, which) -> {
+                .setNegativeButton(getString(R.string.delete_message_negative_button), (dialog, which) -> {
                 });
         builder.show();
     }
+
 }

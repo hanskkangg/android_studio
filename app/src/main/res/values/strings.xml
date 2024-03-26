@@ -5,12 +5,13 @@
     <string name="password" translatable="false">Type your password</string>
     <string name="Login_button" translatable="false">LOGIN</string>
 
-
-        <string name="delete_message_title" translatable="false">Delete Message</string>
-        <string name="delete_message_confirmation" translatable="false">Are you sure you want to delete this message?\n\n%s</string>
-        <string name="delete_message_positive_button" translatable="false">Yes</string>
-        <string name="delete_message_negative_button" translatable="false">No</string>
-        <string name="message_deleted_snackbar" translatable="false">You deleted message #%1$d</string>
-        <string name="undo" translatable="false">Undo</string>
-
+    <!-- Strings for dialog messages -->
+    <string name="delete_message_title" translatable="false">Delete Message</string>
+    <string name="delete_message_confirmation" translatable="false">Are you sure you want to delete this message?\n\n%s</string>
+    <string name="delete_message_positive_button" translatable="false">Yes</string>
+    <string name="delete_message_negative_button" translatable="false">No</string>
+    <string name="message_deleted_snackbar" translatable="false">You deleted message #%1$d</string>
+    <string name="undo" translatable="false">Undo</string>
+    <string name="delete_all_messages_title" translatable="false">Delete All Messages</string>
+    <string name="delete_all_messages_confirmation" translatable="false">Are you sure you want to delete all messages?</string>
 </resources>
