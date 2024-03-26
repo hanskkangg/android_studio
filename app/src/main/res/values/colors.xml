@@ -3,10 +3,12 @@
 
     <color name="my_primary">#FFA3FF</color>
     <color name="my_secondary">#99d774</color>
-    <color name="my_statusbar">#616f71</color>
+    <color name="my_statusbar">#0D0E0E</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="my_text">#000000</color>
+    <color name="colorPrimary">#FFC107</color>
+
 </resources>
